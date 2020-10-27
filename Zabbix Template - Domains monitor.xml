@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2020-10-02T17:08:08Z</date>
+    <date>2020-10-27T12:17:37Z</date>
     <groups>
         <group>
             <name>Zabbix servers</name>
@@ -119,7 +119,23 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Domains monitor:domain-expire[{#DOMAIN}].last()}&lt;60</expression>
+                            <expression>{Domains monitor:domain-expire[{#DOMAIN}].last()}=0</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Domínio {#DOMAIN} está expirado</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Domains monitor:domain-expire[{#DOMAIN}].last()}&lt;60 and {Domains monitor:domain-expire[{#DOMAIN}].last()}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Domínio {#DOMAIN} será expirado em menos de 60 dias</name>
