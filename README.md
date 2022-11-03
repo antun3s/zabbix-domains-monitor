@@ -12,4 +12,4 @@ Copy scripts files to `/usr/local/bin/`
 Import `Zabbix Template - Domains monitor.xml` in Zabbix
 
 
-I used it In Zabbix 4.0 LTS server
+I used it in Zabbix 4.0 and 6.0 LTS 
